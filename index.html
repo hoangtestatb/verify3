@@ -14,25 +14,27 @@
         }(document, 'script', 'letro-jssdk'));
     </script>
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             var id = 'letro-review-js';
-            if (document.getElementById(id)) return;
+            var sid = 'letro-review-style';
+            if (document.getElementById(id)) {
+                return;
+            }
             var ram = new Date().getTime();
             var lrjs = document.createElement('script');
             lrjs.id = id;
             lrjs.src = 'https://verify.letro.jp/tags/js/letro-review.js?v=' + ram;
             var lrs = document.createElement('link');
-            lrs.id = 'letro-review-style';
+            lrs.id = sid;
             lrs.rel = 'stylesheet';
             lrs.href = 'https://verify.letro.jp/tags/css/letro-review.css?v=' + ram;
             document.body.appendChild(lrjs);
             document.head.appendChild(lrs);
-            var ltag = document.createElement('div');
-            ltag.setAttribute('class', '__letro-reivew-tag');
-            ltag.setAttribute('data-ec-site-id', '63200b9817779');
-            ltag.setAttribute('data-review-view-id', '209')
-            document.body.appendChild(ltag);
-        })
+            var __letroReviewTag = document.createElement('div');
+            __letroReviewTag.setAttribute('class', '__letro-reivew-tag');
+            __letroReviewTag.setAttribute('data-ec-site-id', '63200b9817779');
+            document.body.appendChild(__letroReviewTag);
+        });
     </script>
     <body>
         <div>Hello world!</div>
